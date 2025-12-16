@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3h8uwi0iyp2m"]
+
+[ext_resource type="Texture2D" uid="uid://dsgl7dlxyv0xj" path="res://sprites/dagger.PNG" id="1_hxsv3"]
+[ext_resource type="Script" uid="uid://dtr4ut5ebeq3c" path="res://scripts/projectile_h.gd" id="1_up6ln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_up6ln"]
+size = Vector2(9.75089, 18.1362)
+
+[node name="projectile_horizontal" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_up6ln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.38419e-07)
+rotation = 1.55701
+shape = SubResource("RectangleShape2D_up6ln")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.56915
+texture = ExtResource("1_hxsv3")

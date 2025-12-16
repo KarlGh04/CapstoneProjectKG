@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cn0ssauqhw8u3"
+path="res://.godot/imported/Road to Bedran main menu.ogg-d6ac8eb1346d1cc478d69435bde7ca88.oggvorbisstr"
+
+[deps]
+
+source_file="res://musics/Road to Bedran main menu.ogg"
+dest_files=["res://.godot/imported/Road to Bedran main menu.ogg-d6ac8eb1346d1cc478d69435bde7ca88.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

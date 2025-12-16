@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv14b0pp8eego"]
+
+[ext_resource type="Texture2D" uid="uid://dsgl7dlxyv0xj" path="res://sprites/dagger.PNG" id="1_84s01"]
+[ext_resource type="Script" uid="uid://cvtf7d62ikmrf" path="res://scripts/spins.gd" id="1_hdge7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdge7"]
+size = Vector2(2, 6)
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_hdge7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_84s01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hdge7")

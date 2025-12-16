@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgkwne0iig7t5"]
+
+[ext_resource type="Script" uid="uid://cpxa7dobbtqwi" path="res://scripts/projectile.gd" id="1_c8fcr"]
+[ext_resource type="Texture2D" uid="uid://dmql6mkdjip8i" path="res://sprites/sword.PNG" id="1_q3m7n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3m7n"]
+size = Vector2(15, 43)
+
+[node name="projectile_down" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_c8fcr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 6.5)
+shape = SubResource("RectangleShape2D_q3m7n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.5, 7)
+rotation = -3.13372
+scale = Vector2(1.1934, 1.41152)
+texture = ExtResource("1_q3m7n")

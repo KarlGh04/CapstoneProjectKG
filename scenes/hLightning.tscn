@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlk2byk6hu04c"]
+
+[ext_resource type="Script" uid="uid://dxix1bi7i0cff" path="res://scripts/hLightning.gd" id="1_g3c1r"]
+[ext_resource type="Texture2D" uid="uid://dfe6ov2qj4u4h" path="res://sprites/lightning/VFX1/Sprite-sheet/Sprite-sheet.png" id="2_yfcww"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px2v7"]
+atlas = ExtResource("2_yfcww")
+region = Rect2(0, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7bu6"]
+atlas = ExtResource("2_yfcww")
+region = Rect2(256, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4spkh"]
+atlas = ExtResource("2_yfcww")
+region = Rect2(512, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de6vg"]
+atlas = ExtResource("2_yfcww")
+region = Rect2(768, 0, 256, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g0u1f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px2v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7bu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4spkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de6vg")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3c1r"]
+size = Vector2(579, 29)
+
+[node name="Area2D" type="Area2D"]
+process_mode = 1
+script = ExtResource("1_g3c1r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 1
+scale = Vector2(2.82422, 1)
+sprite_frames = SubResource("SpriteFrames_g0u1f")
+animation = &"attack"
+frame_progress = 0.0767418
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, 4.5)
+shape = SubResource("RectangleShape2D_g3c1r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

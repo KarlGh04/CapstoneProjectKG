@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://wys2bjebutmj"
+path="res://.godot/imported/boss 1 first loop.ogg-7ff6e25dbc492180845ae1f2afaf3232.oggvorbisstr"
+
+[deps]
+
+source_file="res://musics/boss 1 first loop.ogg"
+dest_files=["res://.godot/imported/boss 1 first loop.ogg-7ff6e25dbc492180845ae1f2afaf3232.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

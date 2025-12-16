@@ -1,0 +1,243 @@
+[gd_scene load_steps=26 format=3 uid="uid://dhfdkkw3xujhc"]
+
+[ext_resource type="Script" uid="uid://c43ad1lsqxxs4" path="res://scripts/boss_fight_1.gd" id="1_75maf"]
+[ext_resource type="Texture2D" uid="uid://ctkyy7om0fpik" path="res://sprites/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7.png" id="2_y10lp"]
+[ext_resource type="Texture2D" uid="uid://c6mdbxpnvbf43" path="res://sprites/Dimensional_Portal.png" id="3_y10lp"]
+[ext_resource type="AudioStream" uid="uid://cwte7rbrknkyk" path="res://musics/Karl uni game boss 1 Loop 5 minutes.ogg" id="4_mry1w"]
+[ext_resource type="AudioStream" uid="uid://dtv1b0moxld0b" path="res://musics/sfx/death.ogg" id="5_eu7qp"]
+[ext_resource type="AudioStream" uid="uid://yfk8y0lmabx" path="res://musics/sfx/Stab_Punch_Hit_136.wav" id="6_ryc1b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75maf"]
+atlas = ExtResource("2_y10lp")
+region = Rect2(128, 68, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y10lp"]
+atlas = ExtResource("2_y10lp")
+region = Rect2(480, 88, 16, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mry1w"]
+atlas = ExtResource("2_y10lp")
+region = Rect2(128, 102, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sp3mg"]
+atlas = ExtResource("2_y10lp")
+region = Rect2(144, 102, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu7qp"]
+atlas = ExtResource("2_y10lp")
+region = Rect2(160, 102, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryc1b"]
+atlas = ExtResource("2_y10lp")
+region = Rect2(176, 102, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkfvy"]
+atlas = ExtResource("2_y10lp")
+region = Rect2(192, 102, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhalw"]
+atlas = ExtResource("2_y10lp")
+region = Rect2(240, 102, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40ucy"]
+atlas = ExtResource("2_y10lp")
+region = Rect2(224, 102, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12kia"]
+atlas = ExtResource("2_y10lp")
+region = Rect2(208, 102, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr1x2"]
+atlas = ExtResource("2_y10lp")
+region = Rect2(256, 102, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl6oj"]
+atlas = ExtResource("3_y10lp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dtak"]
+atlas = ExtResource("3_y10lp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfshb"]
+atlas = ExtResource("3_y10lp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85x41"]
+atlas = ExtResource("3_y10lp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwhdd"]
+atlas = ExtResource("3_y10lp")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1nu6"]
+atlas = ExtResource("3_y10lp")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sl6oj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75maf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y10lp")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mry1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sp3mg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu7qp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryc1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkfvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhalw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40ucy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12kia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr1x2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sl6oj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dtak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfshb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85x41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwhdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1nu6")
+}],
+"loop": false,
+"name": &"teleport",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dtak"]
+size = Vector2(11, 14)
+
+[node name="bossFight1" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 132
+script = ExtResource("1_75maf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
+sprite_frames = SubResource("SpriteFrames_sl6oj")
+autoplay = "default"
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(16, 0)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-13, 0)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_6dtak")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="UI"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -27.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+value = 100.0
+
+[node name="Label" type="Label" parent="UI/ProgressBar"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -19.0
+offset_right = 83.0
+offset_bottom = 4.0
+theme_override_font_sizes/font_size = 8
+text = "WALL OF BEDRAN"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -11.5
+offset_right = 56.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "BOSS SLAINED"
+
+[node name="ProjectileSpawner" type="Node2D" parent="."]
+position = Vector2(-938, -200)
+
+[node name="SpawnTimer" type="Timer" parent="ProjectileSpawner"]
+
+[node name="ProjectileSpawner_h" type="Node2D" parent="."]
+position = Vector2(-1250, 65)
+
+[node name="SpawnTimerH" type="Timer" parent="ProjectileSpawner_h"]
+wait_time = 3.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mry1w")
+volume_db = -15.0
+bus = &"Music"
+
+[node name="SFX_DEATH" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_eu7qp")
+bus = &"SFX"
+
+[node name="SFX_HIT" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ryc1b")
+bus = &"SFX"
+
+[connection signal="timeout" from="ProjectileSpawner/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="ProjectileSpawner_h/SpawnTimerH" to="." method="_on_spawn_timer_h_timeout"]

@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=3 uid="uid://cy0pb168lglcj"]
+
+[ext_resource type="Texture2D" uid="uid://clnymeyw1pyt7" path="res://sprites/nightCastle2.png" id="1_5jffm"]
+[ext_resource type="Script" uid="uid://bv2pwrfm5io2r" path="res://scripts/prologue.gd" id="1_x1kem"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x1kem"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8byya"]
+bg_color = Color(0.811837, 0.811837, 0.811837, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wrf5"]
+bg_color = Color(0.563626, 0.563626, 0.563626, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6e114"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="Prologue" type="Panel"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_x1kem")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 493.0
+offset_top = 82.0
+offset_right = 591.0
+offset_bottom = 142.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Prologue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Prologue" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.561
+anchor_top = -2.011
+anchor_right = 7.561
+anchor_bottom = -2.011
+offset_left = -261.44
+offset_top = 297.44
+offset_right = 816.56
+offset_bottom = 581.44
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+text = "Bedran has claimed the land of Joura as his own,
+ slaughtering all who dared stand against him. 
+From its ashes he forged a tyrant’s kingdom, raised a loyal army, 
+and carried out brutal genocides against any who defied his reign. 
+Fifty years have passed since Bedran seized Joura, and now you embark on a perilous quest, 
+to obtain the power of time and space itself, 
+so you may return to the past and halt his atrocities before they ever come to pass."
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect2" type="TextureRect" parent="Background"]
+modulate = Color(0.422371, 0.422371, 0.422371, 1)
+offset_left = -6.0
+offset_right = 1158.0
+offset_bottom = 649.0
+texture = ExtResource("1_5jffm")
+expand_mode = 2
+
+[node name="continue" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 385.0
+offset_top = 516.0
+offset_right = 689.0
+offset_bottom = 558.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x1kem")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8byya")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1wrf5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6e114")
+text = "Continue"
+
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]

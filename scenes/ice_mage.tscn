@@ -1,0 +1,142 @@
+[gd_scene load_steps=13 format=3 uid="uid://bft130crsar0e"]
+
+[ext_resource type="Script" uid="uid://ce41nerdd44xg" path="res://scripts/ice_mage.gd" id="1_i72si"]
+[ext_resource type="Texture2D" uid="uid://wxtqnti45a5p" path="res://sprites/iceMage-noBackground.png" id="1_toeuh"]
+[ext_resource type="AudioStream" uid="uid://b2imx1sa05ec5" path="res://musics/sfx/Mages_Magic_Hammer.ogg" id="3_xx2v3"]
+[ext_resource type="AudioStream" uid="uid://ce66yltnionqf" path="res://musics/sfx/Mages_Ice_Spikes.ogg" id="4_yjhfh"]
+[ext_resource type="AudioStream" uid="uid://dx658pk7ccsu" path="res://musics/sfx/Mages_Magic_Slice.ogg" id="5_yjhfh"]
+[ext_resource type="AudioStream" uid="uid://dtv1b0moxld0b" path="res://musics/sfx/death.ogg" id="6_a6fi2"]
+[ext_resource type="AudioStream" uid="uid://yfk8y0lmabx" path="res://musics/sfx/Stab_Punch_Hit_136.wav" id="7_imwhy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i72si"]
+atlas = ExtResource("1_toeuh")
+region = Rect2(508, 0, 279, 819)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86jip"]
+atlas = ExtResource("1_toeuh")
+region = Rect2(0, 0, 273, 819)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx2v3"]
+atlas = ExtResource("1_toeuh")
+region = Rect2(252, 0, 252, 819)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yjhfh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i72si")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86jip")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx2v3")
+}],
+"loop": false,
+"name": &"fly",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sr2xp"]
+size = Vector2(154, 228.5)
+
+[node name="iceMage" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_i72si")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
+sprite_frames = SubResource("SpriteFrames_yjhfh")
+autoplay = "default"
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(197, 0)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-148, -1)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, 19.25)
+shape = SubResource("RectangleShape2D_sr2xp")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="UI"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -27.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+value = 100.0
+
+[node name="Label" type="Label" parent="UI/ProgressBar"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -19.0
+offset_right = 83.0
+offset_bottom = 4.0
+theme_override_font_sizes/font_size = 8
+text = "TIME MAGE"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -11.5
+offset_right = 56.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "BOSS SLAINED"
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="SFX_HAMMER" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xx2v3")
+bus = &"SFX"
+
+[node name="SFX_SPIKES" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yjhfh")
+bus = &"SFX"
+
+[node name="SFX_SLICE" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_yjhfh")
+bus = &"SFX"
+
+[node name="SFX_DEATH" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_a6fi2")
+bus = &"SFX"
+
+[node name="SFX_HIT" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_imwhy")
+bus = &"SFX"
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
